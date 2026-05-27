@@ -1,0 +1,53 @@
+.karte {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.main-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.nummer{
+  font-weight: bold;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.lieferant{
+  font-weight: lighter;
+}
+
+.betrag{
+  font-weight: bold;
+  color: white;
+}
+
+.badge {
+  margin-top: 0.5rem;
+  border-radius: 9999px; //Pill
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+
+  &--ausstehend {
+    background-color: #FEF3C7;
+    color: #92400E;
+    border: 1px solid #F59E0B;
+  }
+
+  &--genehmigt {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #10B981;
+  }
+
+  &--abgelehnt {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #EF4444;
+  }
+}
