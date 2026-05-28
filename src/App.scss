@@ -3,11 +3,29 @@
   padding: 10px;
   margin-bottom: 1rem;
   border-radius: 8px;
+  width: 150px;
 }
 
 .main-wrapper {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+}
+
+.filter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.formular {
+  margin-top: 1rem;
+  display: flex;
+
+  gap: 1rem;
+
 }
 
 .nummer{
@@ -23,6 +41,21 @@
 .betrag{
   font-weight: bold;
   color: white;
+}
+
+.fui-Card {
+  background-color: black !important;
+}
+
+.formular-wrapper {
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 3rem;
+}
+
+.form-button {
+  margin-top: 2rem;
 }
 
 .badge {
