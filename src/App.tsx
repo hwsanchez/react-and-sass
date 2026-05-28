@@ -74,63 +74,68 @@ export default function App() {
 
     return (
       <>
-      <div className={"filter-wrapper"}>
-          {FILTER_OPTIONS.map(filter => (
-              <Button key={filter}
-              appearance={activeFilter === filter ? "primary" : "subtle"}
-              onClick={() => setActiveFilter(filter)}
-              >{filter}</Button>
-          ))}
-      </div>
-      <div className={"main-wrapper"}>
+          <div className="main-wrapper">
+              <div className={"filter-wrapper"}>
+                  {FILTER_OPTIONS.map(filter => (
+                      <Button key={filter}
+                              appearance={activeFilter === filter ? "primary" : "subtle"}
+                              onClick={() => setActiveFilter(filter)}
+                      >{filter}</Button>
+                  ))}
+              </div>
+              <div className={"main-wrapper"}>
 
 
-      {getFilteredBills.map((rechnung) => (<RechnungsKarte key={rechnung.nummer} {...rechnung} />))}
+                  {getFilteredBills.map((rechnung) => (<RechnungsKarte key={rechnung.nummer} {...rechnung} />))}
 
-
-  </div>
-          <div className="formular-wrapper">
-              <Text weight="bold" size={700} >Neue rechnung</Text>
-              <div className="formular">
-                  <Field label="Nummer">
-                      <Input
-                          placeholder="z.B. 123456"
-                          value={formular.nummer}
-                          onChange={e => setFormular({...formular, nummer: e.target.value})}
-                      />
-                  </Field>
-                  <Field label="Lieferant">
-                      <Input
-                          placeholder="z.B. Müller GmbH"
-                          value={formular.lieferant}
-                          onChange={e => setFormular({...formular, lieferant: e.target.value})}
-                      />
-                  </Field>
-                  <Field label="Betrag">
-                      <Input
-                          placeholder="0"
-                          value={formular.betrag === 0 ? '' : String(formular.betrag)}
-                          onChange={e => setFormular({...formular, betrag: Number(e.target.value)})}
-                      />
-                  </Field>
-                  <Field label="Status">
-                      <Select
-                          value={formular.status}
-                          onChange={e => setFormular({...formular, status: e.target.value})}
-                      >
-                          {FILTER_OPTIONS.map(option => (
-                              <option key={option} value={option}>{option}</option>
-                          ))}
-                      </Select>
-                  </Field>
 
               </div>
-              <div className="form-button">
-                  <Button appearance="primary" onClick={() => handleNewBill(formular)}>Hinzufügen</Button>
+              <div className="formular-wrapper">
+                  <Text weight="bold" size={700} >Neue rechnung</Text>
+                  <div className="formular">
+                      <Field label="Nummer">
+                          <Input
+                              placeholder="z.B. 123456"
+                              value={formular.nummer}
+                              onChange={e => setFormular({...formular, nummer: e.target.value})}
+                          />
+                      </Field>
+                      <Field label="Lieferant">
+                          <Input
+                              placeholder="z.B. Müller GmbH"
+                              value={formular.lieferant}
+                              onChange={e => setFormular({...formular, lieferant: e.target.value})}
+                          />
+                      </Field>
+                      <Field label="Betrag">
+                          <Input
+                              placeholder="0"
+                              value={formular.betrag === 0 ? '' : String(formular.betrag)}
+                              onChange={e => setFormular({...formular, betrag: Number(e.target.value)})}
+                          />
+                      </Field>
+                      <Field label="Status">
+                          <Select
+                              value={formular.status}
+                              onChange={e => setFormular({...formular, status: e.target.value})}
+                          >
+                              {FILTER_OPTIONS.map(option => (
+                                  <option key={option} value={option}>{option}</option>
+                              ))}
+                          </Select>
+                      </Field>
+
+                  </div>
+                  <div className="form-button">
+                      <Button appearance="primary" onClick={() => handleNewBill(formular)}>Hinzufügen</Button>
+                  </div>
+
+
               </div>
 
 
           </div>
+
 
       </>)
 }
